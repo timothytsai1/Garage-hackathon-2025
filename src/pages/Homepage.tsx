@@ -5,7 +5,12 @@ export default function Homepage() {
   return (
     <div className="w-screen h-screen overflow-x-hidden bg-black text-white flex">
       <div className="w-45/100 relative">
-        <p className="absolute z-15000 top-8 left-8 text-2xl font-[STIX Two Text] font-bold">
+        <img
+          className="absolute z-15000 top-8  left-5 w-9"
+          src="/toyota-logo.png"
+          alt=""
+        />
+        <p className="absolute z-15000 top-8 left-16 text-2xl font-[STIX Two Text] font-bold">
           GARAGE
         </p>
         <Parallax
@@ -24,7 +29,10 @@ export default function Homepage() {
           <ul className="text-7xl gap-16 space-y-2 font-inter group">
             <li>
               {/* Homepage */}
-              <NavLink to="/" className="underline hover:underline group-hover:no-underline">
+              <NavLink
+                to="/"
+                className="underline hover:underline group-hover:no-underline"
+              >
                 Home
               </NavLink>
             </li>
