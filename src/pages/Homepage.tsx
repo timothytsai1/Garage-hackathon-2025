@@ -1,4 +1,3 @@
-import { PiWarehouseDuotone } from 'react-icons/pi';
 import { NavLink } from 'react-router';
 import { Parallax } from 'react-scroll-parallax';
 
@@ -6,7 +5,9 @@ export default function Homepage() {
   return (
     <div className="w-screen h-screen overflow-x-hidden bg-black text-white flex">
       <div className="w-45/100 relative">
-        <PiWarehouseDuotone className="absolute z-15000 top-8 left-8 text-4xl" />
+        <p className="absolute z-15000 top-8 left-8 text-2xl font-[STIX Two Text] font-bold">
+          GARAGE
+        </p>
         <Parallax
           className=" w-full h-full parallax-element"
           speed={-20}
@@ -20,23 +21,28 @@ export default function Homepage() {
 
       <div className="w-55/100 flex flex-col  justify-center items-center px-32 py-16">
         <div className="flex w-full justify-between items-end mt-auto ">
-          <ul className="text-7xl gap-16 space-y-2 font-inter">
+          <ul className="text-7xl gap-16 space-y-2 font-inter group">
             <li>
               {/* Homepage */}
-              <NavLink to="/" className="hover:underline">
+              <NavLink to="/" className="underline hover:underline group-hover:no-underline">
                 Home
               </NavLink>
             </li>
             <li>
               {/* Purchases */}
-              <NavLink to="/purchase" className="hover:underline">
+              <NavLink
+                to="/purchase"
+                className="hover:underline group-hover:no-underline"
+              >
                 Purchase
               </NavLink>
             </li>
-
             <li>
               {/* Payments */}
-              <NavLink to="/payments" className="hover:underline">
+              <NavLink
+                to="/payments"
+                className="hover:underline group-hover:no-underline"
+              >
                 Payment
               </NavLink>
             </li>
