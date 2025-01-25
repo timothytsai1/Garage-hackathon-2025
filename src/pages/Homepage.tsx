@@ -12,8 +12,8 @@ export default function Homepage() {
       </div>
 
       <div className="w-55/100 flex flex-col  justify-center items-center px-32 py-16">
-        <div className='flex w-full justify-between items-end mt-auto font-inter'>
-          <ul className='text-6xl gap-16 space-y-2'>
+        <div className="flex w-full justify-between items-end mt-auto ">
+          <ul className="text-7xl gap-16 space-y-2 font-inter">
             <li>
               {/* Homepage */}
               <NavLink to="/">Home</NavLink>
@@ -29,11 +29,13 @@ export default function Homepage() {
             </li>
           </ul>
 
-          <p className='w-24 italic '>All in one VR shopping experience</p>
+          <p className="w-28 italic font-[Joan] text-xl">
+            All In One VR Shopping Experience
+          </p>
         </div>
 
         <div className="flex gap-64 mt-48 w-full justify-end">
-          <p>
+          <p className='text-sm font-inter'>
             Made with love by hackers
             {/* make this sound better later */}
           </p>
