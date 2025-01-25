@@ -1,10 +1,21 @@
 import { FaGoogle } from "react-icons/fa";
+import { CgClose } from "react-icons/cg";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  return (
-    <div className="w-screen h-screen overflow-x-hidden bg-black text-white flex font-inter">
+    const navigate = useNavigate();
+
+    const handleGoBack = () => {
+      navigate(-1); // Go back one step in history
+    };
+
+    return (
+    <div className="w-screen h-screen overflow-x-hidden bg-black text-white flex font-inter relative">
+      <button className="absolute right-16 top-16 border-2 cursor-pointer border-white rounded-full p-2" type="button" onClick={handleGoBack}>
+        <CgClose/>
+      </button>
       <div className="w-1/2 h-full">
-        <img/>
+        <img src="/login-image.jpg" className="w-full h-full object-cover scale-x-[-1]"/>
       </div>
       <div className="w-1/2 h-full flex flex-col justify-center items-center p-16">
         <form className="border-b-2 pb-8 w-full flex flex-col gap-y-4">
