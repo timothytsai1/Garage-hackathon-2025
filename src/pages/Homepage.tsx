@@ -96,13 +96,6 @@ export default function Homepage() {
         </div>
     </Modal>
 
-      <NavLink
-        to={"/ask-ai"}
-        className="fixed text-2xl p-2 bottom-10 right-8 rounded-full border-2 bg-black"
-      >
-        <BsSoundwave/>        
-      </NavLink>
-
     </div>
   );
 }

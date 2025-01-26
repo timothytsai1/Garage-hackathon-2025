@@ -26,7 +26,7 @@ export default function Build({setOpen}: BuildProps) {
             <p className="text-center px-4 mt-4 mb-8">
                 Your all in one VR shopping experience. Customize your Toyota either in the web app or with our state of the art VR technology for a more personal touch.
             </p>
-            <div className="w-full flex justify-center gap-8">
+            <div className="w-full grid grid-cols-3 gap-8">
             {
                 data.map((vehicles:any) => (
                     <BuildCard
@@ -59,7 +59,7 @@ interface BuildCardProps {
 function BuildCard({model, msrp, img, setOpen, drivetrains, seating, transmissions}: BuildCardProps) {
 
     return (
-        <div className="w-80 flex flex-col gap-y-2">
+        <div className="w-full flex flex-col gap-y-2">
             <div className="relative overflow-hidden rounded-md w-full bg-neutral-200">
                 <img
                     src={img}
@@ -94,23 +94,23 @@ function BuildCardModal({drivetrains, seating, transmissions}: BuildCardModalPro
         <div className="w-full flex flex-col gap-y-4">
             <div className="w-full flex flex-col">
                 <p className="text-sm">Drivetrain</p>
-                <div className="flex flex-row gap-x-1">
+                <p className="font-bold">
                 {
                     drivetrains.map((drivetrain:string, i: number) => (
-                        (i == drivetrains.length-1) ? <p className="font-bold">{drivetrain}</p> : <p className="font-bold">{drivetrain}<span className="text-red-400">, </span></p>
+                        (i == drivetrains.length-1) ? drivetrain : <>{drivetrain}<span className="text-red-400">,</span> </>
                     ))
                 }
-                </div>
+                </p>
             </div>
             <div className="w-full flex flex-col">
                 <p className="text-sm">Transmission</p>
-                <div className="flex flex-row gap-x-1">
+                <p className="font-bold">
                 {
                     transmissions.map((transmission:string, i: number) => (
-                        (i == transmissions.length-1) ? <p className="font-bold">{transmission}</p> : <p className="font-bold">{transmission}<span className="text-red-400">,</span></p>
+                        (i == transmissions.length-1) ? transmission: <>{transmission}<span className="text-red-400">,</span> </>
                     ))
                 }
-                </div>
+                </p>
             </div>
             <div className="w-full flex flex-col">
                 <p className="text-sm">Seating</p>

@@ -31,5 +31,49 @@
         "transmissions": ["ECVT", "Direct Shift 6-Speed Automatic Transmission"],
         "features": [],
         "img": "https://tmna.aemassets.toyota.com/is/image/toyota/toyota/lifestyle/relative/2025/toyotacrown/CRW_MY23_0004_V003.png?wid=600&fmt=webp-alpha"
+    },
+    {
+        "model": "GR Supra",
+        "msrp": "56,250",
+        "mpg": "",
+        "hp": 0,
+        "seating": 2,
+        "drivetrains": ["Rear-Wheel Drive"],
+        "transmissions": ["8-Speed Automatic Transmission with paddle shifters", "6-Speed intelligent Manual Transmission (iMT)"],
+        "features": [],
+        "img": "https://tmna.aemassets.toyota.com/is/image/toyota/toyota/lifestyle/relative/2025/grsupra/SUP_MY25_0001_V001.png?wid=600&fmt=webp-alpha"
+    },
+    {
+        "model": "RAV4",
+        "msrp": "28,850",
+        "mpg": "",
+        "hp": 0,
+        "seating": 5,
+        "drivetrains": ["Front-Wheel Drive", "All-Wheel Drive"],
+        "transmissions": ["Direct Shift 8-Speed Electronically Controlled automatic Transmission with intelligence (ECT-i) and sequential shift mode", "Electronically controlled Continuously Variable Transmission (ECVT)"],
+        "features": [],
+        "img": "https://tmna.aemassets.toyota.com/is/image/toyota/toyota/lifestyle/relative/2025/rav4/RAV_MY25_0005_V001.png?wid=600&fmt=webp-alpha"
+    },
+    {
+        "model": "Highlander",
+        "msrp": "39,520",
+        "mpg": "",
+        "hp": 0,
+        "seating": 8,
+        "drivetrains": ["Front-Wheel Drive", "All-Wheel Drive"],
+        "transmissions": ["Direct Shift 8-Speed Eletronically Controlled automatic Transmission (ECT)", "Electronically controlled Continuously Variable Transmission (ECVT)"],
+        "features": [],
+        "img": "https://tmna.aemassets.toyota.com/is/image/toyota/toyota/lifestyle/relative/2025/highlander/HLD_MY23_0032_V001.png?wid=600&fmt=webp-alpha"
+    },
+    {
+        "model": "Tacoma",
+        "msrp": "31,590",
+        "mpg": "",
+        "hp": 0,
+        "seating": 5,
+        "drivetrains": ["Rear-Wheel Drive", "4-Wheel Drive"],
+        "transmissions": ["8-Speed Automatic Transmission", "6-Speed Manual Transmission"],
+        "features": [],
+        "img": "https://tmna.aemassets.toyota.com/is/image/toyota/toyota/lifestyle/relative/2025/tacoma/TAC_MY24_0083_V001.png?wid=600&fmt=webp-alpha"
     }
 ]
