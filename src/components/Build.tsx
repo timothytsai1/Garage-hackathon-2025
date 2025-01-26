@@ -35,6 +35,9 @@ export default function Build({setOpen}: BuildProps) {
                         msrp={vehicles.msrp}
                         img={vehicles.img}
                         setOpen={setOpen}
+                        drivetrains={vehicles.drivetrains}
+                        seating={vehicles.seating}
+                        transmissions={vehicles.transmissions}
                     />
                 ))
             }
@@ -48,9 +51,13 @@ interface BuildCardProps {
     msrp: string;
     img: string;
     setOpen: any;
+    drivetrains: string[];
+    seating: number;
+    transmissions: string[];
 }
 
-function BuildCard({model, msrp, img, setOpen}: BuildCardProps) {
+function BuildCard({model, msrp, img, setOpen, drivetrains, seating, transmissions}: BuildCardProps) {
+
     return (
         <div className="w-80 flex flex-col gap-y-2">
             <div className="relative overflow-hidden rounded-md w-full bg-neutral-200">
@@ -60,7 +67,7 @@ function BuildCard({model, msrp, img, setOpen}: BuildCardProps) {
                 />
                 <div className="absolute top-0 left-0 bg-black/20 w-full h-full">
                 </div>
-                <button onClick={() => setOpen(model)} type="button" className="absolute top-2 left-2 p-1 rounded-full border-2 bg-white/20 backdrop-blur-lg cursor-pointer hover:bg-white/40 transition-all duration-300">
+                <button onClick={() => setOpen(<BuildCardModal drivetrains={drivetrains} seating={seating} transmissions={transmissions}/>)} type="button" className="absolute top-2 left-2 p-1 rounded-full border-2 bg-white/20 backdrop-blur-lg cursor-pointer hover:bg-white/40 transition-all duration-300">
                     <MdOutlineQuestionMark />
                 </button>
                 <button type="button" className="absolute right-2 bottom-2 flex gap-x-2 items-end px-4 py-1 rounded-full border-2 bg-white/20 backdrop-blur-lg cursor-pointer hover:bg-white/40 transition-all duration-300">
@@ -71,6 +78,43 @@ function BuildCard({model, msrp, img, setOpen}: BuildCardProps) {
             <div className="flex flex-col gap-y-1">
                 <h1 className="text-lg font-bold">{model}</h1>
                 <p className="font-semibold">${msrp} MSRP</p>
+            </div>
+        </div>
+    )
+}
+
+interface BuildCardModalProps {
+    drivetrains: string[];
+    seating: number;
+    transmissions: string[];
+}
+
+function BuildCardModal({drivetrains, seating, transmissions}: BuildCardModalProps) {
+    return (
+        <div className="w-full flex flex-col gap-y-4">
+            <div className="w-full flex flex-col">
+                <p className="text-sm">Drivetrain</p>
+                <div className="flex flex-row gap-x-1">
+                {
+                    drivetrains.map((drivetrain:string, i: number) => (
+                        (i == drivetrains.length-1) ? <p className="font-bold">{drivetrain}</p> : <p className="font-bold">{drivetrain}<span className="text-red-400">, </span></p>
+                    ))
+                }
+                </div>
+            </div>
+            <div className="w-full flex flex-col">
+                <p className="text-sm">Transmission</p>
+                <div className="flex flex-row gap-x-1">
+                {
+                    transmissions.map((transmission:string, i: number) => (
+                        (i == transmissions.length-1) ? <p className="font-bold">{transmission}</p> : <p className="font-bold">{transmission}<span className="text-red-400">,</span></p>
+                    ))
+                }
+                </div>
+            </div>
+            <div className="w-full flex flex-col">
+                <p className="text-sm">Seating</p>
+                <p className="font-bold">Up to {seating}</p>
             </div>
         </div>
     )
