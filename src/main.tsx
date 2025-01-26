@@ -7,6 +7,7 @@ import Payments from './pages/Payments';
 import Login from './pages/Login';
 import Models from './pages/Models';
 import Checkout from './pages/Checkout';
+import VRLoader from './pages/VRLoader';
 
 createRoot(document.getElementById('root')!).render(
 <BrowserRouter>
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')!).render(
     <Route path="/login" element={<Login />} />
     <Route path="/models" element={<Models/>} />
     <Route path="/checkout" element={<Checkout/>}/>
+    <Route path="/vrloader" element={<VRLoader/>}/>
   </Routes>
 </BrowserRouter>
 );

@@ -1,6 +1,7 @@
 import { MdOutlineQuestionMark } from "react-icons/md";
 import { BsHeadsetVr } from "react-icons/bs";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 interface BuildProps {
     setOpen: Function
@@ -70,10 +71,10 @@ function BuildCard({model, msrp, img, setOpen, drivetrains, seating, transmissio
                 <button onClick={() => setOpen(<BuildCardModal drivetrains={drivetrains} seating={seating} transmissions={transmissions}/>)} type="button" className="absolute top-2 left-2 p-1 rounded-full border-2 bg-white/20 backdrop-blur-lg cursor-pointer hover:bg-white/40 transition-all duration-300">
                     <MdOutlineQuestionMark />
                 </button>
-                <button type="button" className="absolute right-2 bottom-2 flex gap-x-2 items-end px-4 py-1 rounded-full border-2 bg-white/20 backdrop-blur-lg cursor-pointer hover:bg-white/40 transition-all duration-300">
+                <NavLink to="/vrloader" className="absolute right-2 bottom-2 flex gap-x-2 items-end px-4 py-1 rounded-full border-2 bg-white/20 backdrop-blur-lg cursor-pointer hover:bg-white/40 transition-all duration-300">
                     <BsHeadsetVr/>
                     Build in VR
-                </button>
+                </NavLink>
             </div>
             <div className="flex flex-col gap-y-1">
                 <h1 className="text-lg font-bold">{model}</h1>
