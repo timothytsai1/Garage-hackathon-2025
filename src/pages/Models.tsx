@@ -145,7 +145,7 @@ export default function Models() {
 
         <div className="flex flex-col mt-8">
           <p className="text-2xl text-black font-bold mb-4">Packages</p>
-          <div className="flex flex-col gap-y-2 mb-6">
+ Checkout         <div className="flex flex-col gap-y-2 mb-6">
             {packages.map((p, i) => (
                 <button key={i} onClick={() => {setActivePkg((activePkg != i) ? i : null); setPrice((prev) => (activePkg === i) ? 56250 : prev+p.price)}} className={`${cardStyle} flex-col items-start ${(i === activePkg) ? "border-red-500" : ""}`}>
                     <p>
@@ -161,8 +161,8 @@ export default function Models() {
         </div>
         </div>
 
-        <NavLink to="/checkout" className="w-full text-center px-4 py-3 rounded-md bg-red-400 font-bold text-white hover:bg-red-600 transition-all duration-300">
-            Checkout
+        <NavLink to={`/checkout?model=${"Supra"}&msrp=${price}`} className="w-full text-center px-4 py-3 rounded-md bg-red-400 font-bold text-white hover:bg-red-600 transition-all duration-300">
+            Purchase 
         </NavLink>
         
       </div>

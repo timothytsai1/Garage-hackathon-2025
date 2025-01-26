@@ -3,8 +3,6 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Modal from '@mui/material/Modal'
 import Navbar from '../components/Navbar';
 import Build from '../components/Build';
-import { BsSoundwave } from "react-icons/bs";
-import { NavLink } from 'react-router-dom';
 
 export default function Homepage() {
   const mediaFiles = ['/shoot1.mp4', '/supra-video.mp4', '/shoot2.mp4'];

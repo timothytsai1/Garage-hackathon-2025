@@ -6,6 +6,7 @@ import Purchases from './pages/Purchases';
 import Payments from './pages/Payments';
 import Login from './pages/Login';
 import Models from './pages/Models';
+import Checkout from './pages/Checkout';
 
 createRoot(document.getElementById('root')!).render(
 <BrowserRouter>
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
     <Route path="/payments" element={<Payments />} />
     <Route path="/login" element={<Login />} />
     <Route path="/models" element={<Models/>} />
+    <Route path="/checkout" element={<Checkout/>}/>
   </Routes>
 </BrowserRouter>
 );
