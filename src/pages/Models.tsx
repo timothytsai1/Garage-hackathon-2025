@@ -1,4 +1,11 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Environment, useGLTF } from '@react-three/drei';
+
+function SupraModel() {
+  const { scene } = useGLTF('/src/assets/supra_by_rogerharsh.glb');
+  return <primitive object={scene} scale={0.5} />;
+}
 
 export default function Models() {
   const arr = [
@@ -14,7 +21,25 @@ export default function Models() {
     <div className="flex w-full h-full bg-white">
       {/* Left section */}
       <div className="w-2/3">
-        <img src="" alt="Car" />
+        <Canvas
+          camera={{
+            position: [0, 2, 10], // Set the starting camera position: x, y, z
+            fov: 50, // Field of view for a natural perspective
+          }}
+        >
+          {/* Lighting */}
+          <ambientLight intensity={0.3} />
+          <directionalLight position={[5, 5, 5]} intensity={1} />
+          <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1.5} castShadow />
+
+          {/* 3D Model */}
+          <SupraModel />
+
+          {/* Camera Controls */}
+          <OrbitControls enableZoom={true} />
+          {/* Environment */}
+          <Environment preset="sunset" />
+        </Canvas>
       </div>
 
       {/* Right section */}
@@ -43,15 +68,12 @@ export default function Models() {
                   }}
                 ></span>
                 {/* Color Name */}
-                
-                  {color.name}
-                
+
+                {color.name}
               </button>
             ))}
           </div>
           <p className="text-2xl text-gray-600 my-2">INTERIOR</p>
-
-          
         </div>
       </div>
     </div>
