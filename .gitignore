@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+server.py
+.env
+src/assets/Toyota_RAV4_LE_2019.fbx
+src/assets/Toyota_RAV4_LE_2019.mtl
+src/assets/Toyota_RAV4_LE_2019.obj
