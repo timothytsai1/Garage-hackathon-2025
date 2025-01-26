@@ -1,12 +1,58 @@
+import { useState } from "react";
+
 export default function Models() {
+  const arr = [
+    { name: 'Stratosphere', color: 'rgb(16, 12, 86)' },
+    { name: 'Absolute Zero', color: 'rgb(235, 234, 229)' },
+    { name: 'Nocturnal', color: 'rgb(22, 22, 23)' },
+    { name: 'Renaissance Red', color: 'rgb(182, 30, 13)' },
+  ];
+
+  const [selectedColor, setSelectedColor] = useState(null);
+
   return (
-    <div className="flex w-full h-full ">
+    <div className="flex w-full h-full bg-white">
+      {/* Left section */}
       <div className="w-2/3">
-        <img src="" alt="" />
+        <img src="" alt="Car" />
       </div>
 
-      <div className="w-1/3">
-        
+      {/* Right section */}
+      <div className="flex flex-col w-1/3 p-4 border border-black">
+        <div className="p-4">
+          <p className="text-4xl text-black font-bold mb-6">Colors</p>
+          <p className="text-2xl text-gray-600 mb-2">EXTERIOR</p>
+          <div className="flex flex-col gap-3 ">
+            {/* Loop through colors */}
+            {arr.map((color, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedColor(index)}
+                className={`flex items-center p-4 text-lg text-black font-bold rounded-lg shadow-md border transition-colors ${
+                  selectedColor === index
+                    ? 'border-red-500'
+                    : 'border-gray-400 hover:bg-gray-200'
+                }`}
+                // className=" flex items-center p-4 text-lg text-black font-bold border border-gray-400 rounded-lg shadow-md hover:bg-gray-200"
+              >
+                {/* Circle */}
+                <span
+                  className="w-13 h-13 rounded-full mr-3"
+                  style={{
+                    backgroundColor: color.color,
+                  }}
+                ></span>
+                {/* Color Name */}
+                
+                  {color.name}
+                
+              </button>
+            ))}
+          </div>
+          <p className="text-2xl text-gray-600 my-2">INTERIOR</p>
+
+          
+        </div>
       </div>
     </div>
   );
