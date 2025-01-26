@@ -152,10 +152,10 @@ export default function Models() {
                         {p.name}
                     </p>
                     <p className="text-green-700">${p.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
-                    <button type="button" onClick={() => {setOpenModal(true); setModalMsg("Full-Speed Dynamic Radar Cruise Control, * Blind Spot Monitor (BSM), * Rear Cross-Traffic Alert (RCTA), * Parking Sensors * with Emergency Braking function. Technology included: 8.8-in. touchscreen display with navigation, * 12-speaker 500W JBL® * audio system with amplifier, touchpad rotary control, wireless Apple CarPlay® * compatible (iOS only), Speed Limit Information, * Supra Connected Services * with trial: includes Remote Services, * Remote Maintenance, * Automatic Emergency Calling, * Real-Time Traffic Information, * Stolen Vehicle Recovery, * Map Updates. *")}} className="flex gap-x-1 cursor-pointer font-medium items-center">
+                    <div onClick={() => {setOpenModal(true); setModalMsg("Full-Speed Dynamic Radar Cruise Control, * Blind Spot Monitor (BSM), * Rear Cross-Traffic Alert (RCTA), * Parking Sensors * with Emergency Braking function. Technology included: 8.8-in. touchscreen display with navigation, * 12-speaker 500W JBL® * audio system with amplifier, touchpad rotary control, wireless Apple CarPlay® * compatible (iOS only), Speed Limit Information, * Supra Connected Services * with trial: includes Remote Services, * Remote Maintenance, * Automatic Emergency Calling, * Real-Time Traffic Information, * Stolen Vehicle Recovery, * Map Updates. *")}} className="flex gap-x-1 cursor-pointer font-medium items-center">
                         See Details
                         <BiSolidChevronRight/>
-                    </button>
+                    </div>
                 </button>
             ))}
         </div>
