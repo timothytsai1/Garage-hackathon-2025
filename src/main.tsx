@@ -7,10 +7,12 @@ import Homepage from './pages/Homepage';
 import Purchases from './pages/Purchases';
 import Payments from './pages/Payments';
 import Login from './pages/Login';
+import Navbar from './components/Navbar';
 
 createRoot(document.getElementById('root')!).render(
   <ParallaxProvider>
     <BrowserRouter>
+    <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/purchase" element={<Purchases />} />
