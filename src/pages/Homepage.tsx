@@ -20,6 +20,7 @@ export default function Homepage() {
     return () => clearInterval(interval);
   }, []);
 
+  // TODO: add smooth scrolling currently doesn't work
   const handleScroll = () => {
     if (contentRef.current) {
       contentRef.current.scrollIntoView({ behavior: 'smooth' });
