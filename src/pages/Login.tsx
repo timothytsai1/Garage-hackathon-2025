@@ -1,6 +1,6 @@
-import { FaGoogle } from "react-icons/fa";
 import { CgClose } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ export default function Login() {
 
     return (
     <div className="w-screen h-screen overflow-x-hidden bg-black text-white flex font-inter relative">
-      <button className="absolute right-16 top-16 border-2 cursor-pointer border-white rounded-full p-2" type="button" onClick={handleGoBack}>
+      <button className="absolute right-8 top-8 border-2 cursor-pointer border-white rounded-full p-1" type="button" onClick={handleGoBack}>
         <CgClose/>
       </button>
       <div className="w-1/2 h-full">
@@ -28,14 +28,16 @@ export default function Login() {
             <label>Password</label>
             <input className="px-4 py-3 bg-neutral-200 text-black" type="password" />
           </div>
-          <button type="button" className="mt-4 bg-white text-black px-4 py-3 font-bold">Log In</button>
+          <NavLink to="/" className="text-center mt-4 bg-white text-black px-4 py-3 font-bold">Log In</NavLink>
         </form>
+        {/*
         <div className="w-full mt-8">
           <button className="w-full bg-white text-black px-4 py-3 flex justify-center items-center gap-x-2 font-bold">
             <FaGoogle />
             Google
           </button>
         </div>
+        */}
       </div>
     </div>
   );
