@@ -72,7 +72,7 @@ function BuildCard({model, msrp, img, setOpen, drivetrains, seating, transmissio
                 </button>
                 <button type="button" className="absolute right-2 bottom-2 flex gap-x-2 items-end px-4 py-1 rounded-full border-2 bg-white/20 backdrop-blur-lg cursor-pointer hover:bg-white/40 transition-all duration-300">
                     <BsHeadsetVr/>
-                    Try in VR
+                    Build in VR
                 </button>
             </div>
             <div className="flex flex-col gap-y-1">
