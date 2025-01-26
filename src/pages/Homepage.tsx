@@ -1,19 +1,21 @@
-import { useState, useEffect, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import Modal from '@mui/material/Modal'
+import Navbar from '../components/Navbar';
+import Build from '../components/Build';
+import { BsSoundwave } from "react-icons/bs";
+import { NavLink } from 'react-router-dom';
 
 export default function Homepage() {
   const mediaFiles = ['/shoot1.mp4', '/supra-video.mp4', '/shoot2.mp4'];
   const [currentMedia, setCurrentMedia] = useState(0);
-  const [isFading, setIsFading] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
+  const [modalMsg, setModalMsg] = useState("");
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsFading(true);
       setTimeout(() => {
         setCurrentMedia((prev) => (prev + 1) % mediaFiles.length);
-        setIsFading(false);
       }, 350);
     }, 4000);
 
@@ -21,15 +23,21 @@ export default function Homepage() {
   }, []);
 
   // TODO: add smooth scrolling currently doesn't work
-  const handleScroll = () => {
-    if (contentRef.current) {
-      contentRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleScroll = (id:string) => {
+      const section = document.getElementById(id);
+      if (section) {
+        const topOffset = section.offsetTop;
+        window.scrollTo({
+            top: topOffset,
+            behavior: "smooth"
+        })
+      }
   };
 
   return (
-    <div className="w-screen h-screen overflow-x-hidden bg-black text-white">
-      <div className="relative w-screen h-screen">
+    <div>
+        <Navbar/>
+      <div className="relative w-full h-screen">
         {mediaFiles[currentMedia].endsWith('.mp4') ? (
           <video
             key={mediaFiles[currentMedia]}
@@ -54,8 +62,9 @@ export default function Homepage() {
           </h1>
 
           <button
-            onClick={handleScroll}
-            className="px-6 bottom-0 py-3 border-2 border-white text-white font-medium text-lg hover:bg-white hover:text-black transition-all duration-300"
+            type="button"
+            onClick={() => handleScroll("build")}
+            className="cursor-pointer px-6 bottom-0 py-3 border-2 border-white text-white font-medium text-lg hover:bg-white hover:text-black transition-all duration-300"
           >
             Build your Toyota
           </button>
@@ -63,7 +72,7 @@ export default function Homepage() {
 
         <div
           className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer"
-          onClick={handleScroll}
+          onClick={() => handleScroll("build")}
         >
           <KeyboardArrowDownIcon
             fontSize="large"
@@ -72,43 +81,28 @@ export default function Homepage() {
         </div>
       </div>
 
-      <div
-        ref={contentRef}
-        className="min-h-screen flex flex-col justify-center items-center px-32 py-16"
-      >
-        <div className="flex w-full justify-between items-end mt-auto">
-          <ul className="text-7xl gap-16 space-y-2 font-inter group">
-            <li>
-              <NavLink to="/" className="underline hover:underline group-hover:no-underline">
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/purchase"
-                className="hover:underline group-hover:no-underline"
-              >
-                Purchase
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/payments"
-                className="hover:underline group-hover:no-underline"
-              >
-                Payment
-              </NavLink>
-            </li>
-          </ul>
-          <p className="w-28 italic font-[Joan] text-xl">
-            All In One VR Shopping Experience
-          </p>
-        </div>
-
-        <div className="flex gap-64 mt-48 w-full justify-end">
-          <p className="text-sm font-inter">Made with ❤ by hackers</p>
-        </div>
+      <div id="build">
+        <Build setOpen={(msg:any) => {setOpen(true); setModalMsg(msg)}}/>
       </div>
+    
+    <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+    >
+        <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 rounded-md bg-neutral-700 min-w-80'>
+            {modalMsg}
+        </div>
+    </Modal>
+
+      <NavLink
+        to={"/ask-ai"}
+        className="fixed text-2xl p-2 bottom-10 right-8 rounded-full border-2 bg-black"
+      >
+        <BsSoundwave/>        
+      </NavLink>
+
     </div>
   );
 }

@@ -1,0 +1,35 @@
+[
+    {
+        "model": "Corolla",
+        "msrp": "22,325",
+        "mpg": "",
+        "hp": 0,
+        "seating": 5,
+        "drivetrains": ["Front-Wheel Drive", "All-Wheel Drive"],
+        "transmissions": ["CVT", "ECVT"],
+        "features": [],
+        "img": "https://tmna.aemassets.toyota.com/is/image/toyota/toyota/lifestyle/relative/2025/corolla/COR_MY25_0001_V001.png?wid=600&fmt=webp-alpha"
+    },
+    {
+        "model": "Prius",
+        "msrp": "28,350",
+        "mpg": "",
+        "hp": 0,
+        "seating": 5,
+        "drivetrains": ["Front-Wheel Drive", "All-Wheel Drive"],
+        "transmissions": ["CVT", "ECVT"],
+        "features": [],
+        "img": "https://tmna.aemassets.toyota.com/is/image/toyota/toyota/lifestyle/relative/2025/prius/PRS_MY23_0076_V002.png?wid=600&fmt=webp-alpha"
+    },
+    {
+        "model": "Crown",
+        "msrp": "41,440",
+        "mpg": "",
+        "hp": 0,
+        "seating": 5,
+        "drivetrains": ["All-Wheel Drive"],
+        "transmissions": ["ECVT", "Direct Shift 6-Speed Automatic Transmission"],
+        "features": [],
+        "img": "https://tmna.aemassets.toyota.com/is/image/toyota/toyota/lifestyle/relative/2025/toyotacrown/CRW_MY23_0004_V003.png?wid=600&fmt=webp-alpha"
+    }
+]

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Joan&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
 @import 'tailwindcss';
 
-
 .font-inter {
   font-family: 'Inter', sans-serif;
 }
@@ -10,4 +9,18 @@
 }
 .joan-regular {
   font-family: 'Joan', serif;
+}
+
+/*scroll wheel stuff*/
+html {
+    scroll-behavior: smooth;
+    scrollbar-color: #363434 #1a1919;
+}
+
+body, #root {
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
 }
